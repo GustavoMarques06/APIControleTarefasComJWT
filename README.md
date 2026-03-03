@@ -105,10 +105,11 @@ dotnet run
 
 https://localhost:{porta}/swagger
 
-3.  Faça login em `/auth/login`
-4.  Copie o token retornado
-5.  Clique em **Authorize**
-6.  Informe:
+3.  Faça registro em `/auth/register`
+4.  Faça login em `/auth/login`
+5.  Copie o token retornado
+6.  Clique em **Authorize**
+7.  Informe:
 
 Bearer SEU_TOKEN
 
