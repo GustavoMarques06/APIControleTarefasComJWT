@@ -1,4 +1,4 @@
-# 🔐 API Controle de Tarefas com JWT
+#  API Controle de Tarefas com JWT
 
 API REST desenvolvida em **ASP.NET Core** utilizando **autenticação
 JWT**, arquitetura em camadas e boas práticas de separação de
@@ -10,7 +10,7 @@ tarefas (ToDo).
 
 ------------------------------------------------------------------------
 
-## 🚀 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 -   .NET / ASP.NET Core
 -   Entity Framework Core
@@ -24,7 +24,7 @@ tarefas (ToDo).
 
 ------------------------------------------------------------------------
 
-## 📁 Arquitetura do Projeto
+##  Arquitetura do Projeto
 
 O projeto segue separação por responsabilidades:
 
@@ -35,20 +35,20 @@ O projeto segue separação por responsabilidades:
     ├── Domain           → Entidades e contratos
     └── Infrastructure   → Banco de dados, JWT e Repositories
 
-### ✔ Camadas
+###  Camadas
 
-✅ **API** - Recebe requisições HTTP - Retorna respostas - Contém
+ **API** - Recebe requisições HTTP - Retorna respostas - Contém
 Controllers
 
-✅ **Application** - Regras de negócio - Services - DTOs
+ **Application** - Regras de negócio - Services - DTOs
 
-✅ **Domain** - Entidades principais - Interfaces dos repositórios
+ **Domain** - Entidades principais - Interfaces dos repositórios
 
-✅ **Infrastructure** - EF Core - JWT - Implementação dos repositories
+ **Infrastructure** - EF Core - JWT - Implementação dos repositories
 
 ------------------------------------------------------------------------
 
-## 🔑 Autenticação JWT
+##  Autenticação JWT
 
 A API utiliza autenticação baseada em **Bearer Token**.
 
@@ -65,31 +65,35 @@ Authorization: Bearer {token}
 
 ------------------------------------------------------------------------
 
-## 📌 Endpoints
+## Endpoints
 
-### 🔐 Auth
+---
 
-  Método   Rota             Descrição
-  -------- ---------------- --------------------------
-  POST     /auth/register   Registrar usuário
-  POST     /auth/login      Login e geração do token
+### Auth
+
+| Método | Rota            | Descrição                    |
+|--------|-----------------|------------------------------|
+| POST   | /auth/register  | Registrar usuário            |
+| POST   | /auth/login     | Login e geração do token JWT |
+
+---
+
+### ToDo (Protegido)
+
+| Método | Rota         | Descrição                     |
+|--------|--------------|-------------------------------|
+| GET    | /tasks       | Listar tarefas do usuário     |
+| POST   | /tasks       | Criar tarefa                  |
+
+> **Necessário enviar Token JWT no Header Authorization**
+>
+> ```
+> Authorization: Bearer SEU_TOKEN_AQUI
+> ```
 
 ------------------------------------------------------------------------
 
-### ✅ ToDo (Protegido)
-
-  Método   Rota          Descrição
-  -------- ------------- ---------------------------
-  GET      /tasks        Listar tarefas do usuário
-  POST     /tasks        Criar tarefa
-  PUT      /tasks/{id}   Atualizar tarefa
-  DELETE   /tasks/{id}   Remover tarefa
-
-⚠️ Necessário Token JWT.
-
-------------------------------------------------------------------------
-
-## 🧪 Testando com Swagger
+##  Testando com Swagger
 
 1.  Execute o projeto:
 
@@ -108,11 +112,11 @@ https://localhost:{porta}/swagger
 
 Bearer SEU_TOKEN
 
-Agora as rotas protegidas estarão liberadas ✅
+Agora as rotas protegidas estarão liberadas 
 
 ------------------------------------------------------------------------
 
-## 🗄️ Banco de Dados
+##  Banco de Dados
 
 O banco é criado via **Entity Framework Core**.
 
@@ -125,7 +129,7 @@ dotnet ef database update
 
 ------------------------------------------------------------------------
 
-## 🔒 Segurança
+##  Segurança
 
 -   Senhas armazenadas com hash (`PasswordHasher`)
 -   JWT assinado com chave secreta
@@ -134,7 +138,7 @@ dotnet ef database update
 
 ------------------------------------------------------------------------
 
-## 🎯 Objetivo do Projeto
+##  Objetivo do Projeto
 
 Este projeto foi desenvolvido para aprendizado de:
 
@@ -145,18 +149,10 @@ Este projeto foi desenvolvido para aprendizado de:
 
 ------------------------------------------------------------------------
 
-## 👨‍💻 Autor
+##  Autor
 
 **Gustavo Marques**
 
-GitHub: 👉 https://github.com/GustavoMarques06
+GitHub:  https://github.com/GustavoMarques06
 
 ------------------------------------------------------------------------
-
-## ⭐ Melhorias Futuras
-
--   Refresh Token
--   Roles e Permissions
--   Paginação de tarefas
--   Docker
--   Testes Unitários
