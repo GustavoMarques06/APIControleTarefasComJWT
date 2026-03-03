@@ -2,6 +2,7 @@ using APIControleTarefasComAutenticação.Application.Interfaces;
 using APIControleTarefasComAutenticação.Application.Services;
 using APIControleTarefasComAutenticação.Domain.Entities;
 using APIControleTarefasComAutenticação.Domain.Interfaces;
+using APIControleTarefasComAutenticação.Infrastructure.Repositories;
 using APIControleTarefasComAutenticação.Infrastructure.Security;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -22,6 +23,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // ================= DEPENDENCY INJECTION =================
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
+builder.Services.AddScoped<IToDoService, ToDoService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();

@@ -1,4 +1,6 @@
-﻿namespace APIControleTarefasComAutenticação.Domain.Entities
+﻿using System.Collections.ObjectModel;
+
+namespace APIControleTarefasComAutenticação.Domain.Entities
 {
     public class User
     {
